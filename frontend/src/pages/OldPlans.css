@@ -1,0 +1,351 @@
+.old-plans-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f1117 0%, #1a1d28 100%);
+  padding: 30px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.old-plans-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.old-plans-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.old-plans-back-btn {
+  background: none;
+  border: none;
+  color: #4da6ff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.old-plans-back-btn:hover {
+  background: rgba(77, 166, 255, 0.1);
+}
+
+.old-plans-header-left h1 {
+  font-size: 32px;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.old-plans-header-left p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+.old-plans-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.old-plans-user {
+  font-size: 14px;
+  color: #aaa;
+  padding: 8px 12px;
+  background: rgba(77, 166, 255, 0.05);
+  border-radius: 6px;
+}
+
+.old-plans-new-btn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #4da6ff 0%, #357abd 100%);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.old-plans-new-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(77, 166, 255, 0.3);
+}
+
+.old-plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.old-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.old-plans-card {
+  background: rgba(26, 29, 39, 0.6);
+  border: 1px solid rgba(77, 166, 255, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.old-plans-card:hover {
+  border-color: rgba(77, 166, 255, 0.3);
+  background: rgba(26, 29, 39, 0.8);
+  box-shadow: 0 12px 36px rgba(77, 166, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.old-plans-card.selected {
+  border-color: #4da6ff;
+  background: rgba(77, 166, 255, 0.05);
+}
+
+.old-plans-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.old-plans-card-goal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.old-plans-card-goal svg {
+  color: #4da6ff;
+  flex-shrink: 0;
+}
+
+.old-plans-goal-title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.old-plans-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.old-plans-delete-btn {
+  background: none;
+  border: none;
+  color: #e05555;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.old-plans-delete-btn:hover {
+  color: #ff6b6b;
+}
+
+.old-plans-card-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.1);
+}
+
+.old-plans-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.old-plans-meta-item .label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.old-plans-meta-item .value {
+  font-size: 13px;
+  color: #4da6ff;
+  font-weight: 600;
+}
+
+.old-plans-card-date {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.old-plans-open-btn {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(77, 166, 255, 0.1);
+  border: 1px solid rgba(77, 166, 255, 0.2);
+  border-radius: 6px;
+  color: #4da6ff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.old-plans-open-btn:hover {
+  background: rgba(77, 166, 255, 0.2);
+  border-color: rgba(77, 166, 255, 0.4);
+}
+
+.old-plans-confirm-delete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 17, 23, 0.95);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  backdrop-filter: blur(5px);
+  animation: fadeInUp 0.2s ease-out;
+}
+
+.old-plans-confirm-delete p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.old-plans-confirm-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.old-plans-confirm-buttons button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.old-plans-confirm-buttons button.confirm {
+  background: #e05555;
+  color: #fff;
+}
+
+.old-plans-confirm-buttons button.confirm:hover {
+  background: #ff6b6b;
+}
+
+.old-plans-confirm-buttons button.cancel {
+  background: rgba(77, 166, 255, 0.1);
+  color: #4da6ff;
+  border: 1px solid rgba(77, 166, 255, 0.2);
+}
+
+.old-plans-confirm-buttons button.cancel:hover {
+  background: rgba(77, 166, 255, 0.2);
+}
+
+/* Empty State */
+.old-plans-empty {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f1117 0%, #1a1d28 100%);
+}
+
+.old-plans-empty-content {
+  text-align: center;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.old-plans-empty-content svg {
+  color: #4da6ff;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.old-plans-empty-content h2 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+.old-plans-empty-content p {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 24px 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .old-plans-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .old-plans-header-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .old-plans-new-btn {
+    width: 100%;
+  }
+
+  .old-plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
