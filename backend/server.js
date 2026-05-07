@@ -53,7 +53,7 @@ let validLicenseKeys = new Set();
 
 function loadLicenseKeys() {
   try {
-    const keyFilePath = path.join(process.cwd(), '..', 'planify_license_keys.txt');
+    const keyFilePath = path.join(__dirname, 'planify_license_keys.txt');
     const keysContent = fs.readFileSync(keyFilePath, 'utf-8');
     validLicenseKeys = new Set(
       keysContent
