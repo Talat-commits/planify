@@ -66,6 +66,9 @@ function loadLicenseKeys() {
         .filter(k => k.length > 0)
     );
     console.log(`✓ Loaded ${validLicenseKeys.size} license keys`);
+    console.log('Loaded keys count:', validLicenseKeys.size);
+    console.log('First key:', Array.from(validLicenseKeys)[0]);
+    console.log('Keys path used:', keysPath);
   } catch (error) {
     console.error('Warning: Could not load license keys file:', error.message);
     validLicenseKeys = new Set();
@@ -190,7 +193,10 @@ app.post('/api/validate-key', (req, res) => {
     const { key } = req.body;
     if (!key) return res.status(400).json({ error: 'Key is required', valid: false });
 
+    console.log('Validating key:', key.trim());
+    console.log('Total valid keys in set:', validLicenseKeys.size);
     const isValid = validLicenseKeys.has(key.trim());
+    console.log('Validation result:', isValid);
     res.json({ valid: isValid });
   } catch (err) {
     console.error(err);
