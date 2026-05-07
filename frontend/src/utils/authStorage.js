@@ -1,7 +1,11 @@
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 /**
  * Authentication & Storage Management
  * Handles license key validation, user mapping, and plan storage
  */
+
+
 
 const STORAGE_KEY = 'planify_auth'
 const USERS_REGISTRY_KEY = 'planify_users_registry'
@@ -40,7 +44,7 @@ export function registerUser(licenseKey, userName) {
 export async function getUserByKey(licenseKey) {
   // Try backend first (cross-browser sync)
   try {
-    const response = await fetch(`/api/user/${licenseKey}`)
+    const response = await fetch(`${API_URL}/api/user/${licenseKey}`)
     const data = await response.json()
     if (data.user) {
       return data.user
@@ -60,7 +64,7 @@ export async function getUserByKey(licenseKey) {
  */
 export async function validateLicenseKey(key) {
   try {
-    const response = await fetch('/api/validate-key', {
+    const response = await fetch(`${API_URL}/api/validate-key`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ key })
@@ -102,7 +106,7 @@ export function storeUserAuth(licenseKey, userName) {
   window.dispatchEvent(new Event('planify-auth-changed'))
   
   // Call backend to register user (async, in background, don't block)
-  fetch('/api/register-user', {
+  fetch(`${API_URL}/api/register-user`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ key: licenseKey, name: userName })
@@ -153,7 +157,7 @@ export async function savePlan(planData) {
 
   // Save to backend first
   try {
-    const response = await fetch(`/api/user/${key}/plans`, {
+    const response = await fetch(`${API_URL}/api/user/${key}/plans`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ plan: planData })
@@ -201,7 +205,7 @@ export async function getSavedPlans() {
 
   // Try backend first
   try {
-    const response = await fetch(`/api/user/${key}/plans`)
+    const response = await fetch(`${API_URL}/api/user/${key}/plans`)
     const data = await response.json()
     if (data.plans && Array.isArray(data.plans)) {
       // Update localStorage cache
@@ -236,7 +240,7 @@ export async function getPlanById(planId) {
 
   // Try backend first
   try {
-    const response = await fetch(`/api/user/${key}/plans/${planId}`)
+    const response = await fetch(`${API_URL}/api/user/${key}/plans/${planId}`)
     const data = await response.json()
     if (data.plan) {
       return data.plan
@@ -258,7 +262,7 @@ export async function updatePlan(planId, updatedPlan) {
   if (!key) return false
 
   try {
-    const response = await fetch(`/api/user/${key}/plans/${planId}`, {
+    const response = await fetch(`${API_URL}/api/user/${key}/plans/${planId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ plan: updatedPlan })
@@ -288,7 +292,7 @@ export async function deletePlan(planId) {
   if (!key) return false
 
   try {
-    const response = await fetch(`/api/user/${key}/plans/${planId}`, {
+    const response = await fetch(`${API_URL}/api/user/${key}/plans/${planId}`, {
       method: 'DELETE'
     })
     const data = await response.json()
