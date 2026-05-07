@@ -59,7 +59,7 @@ let validLicenseKeys = new Set();
 function loadLicenseKeys() {
   try {
     // Try parent directory first, fall back to current directory
-    const keysPath = path.existsSync(path.join(__dirname, '../planify_license_keys.txt')) 
+    const keysPath = fs.existsSync(path.join(__dirname, '../planify_license_keys.txt')) 
       ? path.join(__dirname, '../planify_license_keys.txt')
       : path.join(__dirname, 'planify_license_keys.txt');
     
