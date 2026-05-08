@@ -1,0 +1,26 @@
+{
+  "PLY-C8R9S1T2": {
+    "name": "User",
+    "firstUsedAt": "2026-05-06T18:20:32.173Z",
+    "lastUsedAt": "2026-05-06T18:20:32.173Z",
+    "plans": [
+      {
+        "id": "1778091632173",
+        "goalTitle": "Crush Your Software Engineering Interview",
+        "goalDescription": "Prepare for a software engineering interview in 4 hours, focusing on system design and scalability, to increase chances of success at a FAANG-level tech company",
+        "startTime": "11:20 PM",
+        "endTime": "3:20 AM",
+        "totalDuration": "4 hours 0 minutes",
+        "category": "study",
+        "tasks": [],
+        "plannedProgressPoints": [],
+        "aiInsights": {
+          "strengths": [],
+          "watchOut": [],
+          "motivationalMessage": ""
+        },
+        "savedAt": "2026-05-06T18:20:32.173Z"
+      }
+    ]
+  }
+}

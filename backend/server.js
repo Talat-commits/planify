@@ -89,7 +89,7 @@ loadLicenseKeys();
 
 // ── User Data Management ──────────────────────────────────────────────────────
 // Store user data (registry) and plans on the server
-const USER_DATA_FILE = path.join(process.cwd(), '..', 'planify_user_data.json');
+const USER_DATA_FILE = path.join(__dirname, 'planify_user_data.json');
 
 let userDatabase = {};
 
